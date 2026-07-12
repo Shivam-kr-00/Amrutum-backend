@@ -38,6 +38,14 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', authRoutes);
 
+app.get("/", (_req, res) => {
+  res.json({
+    success: true,
+    message: "Amrutam Telemedicine API is running",
+    docs: "/api/docs",
+  });
+});
+
 app.get('/health', (_req, res) => {
   res.status(200).json({
     status: 'success',

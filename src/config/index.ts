@@ -13,6 +13,7 @@ const envSchema = z.object({
   JWT_ACCESS_EXPIRY: z.string().default('15m'),
   JWT_REFRESH_EXPIRY: z.string().default('7d'),
   BCRYPT_SALT_ROUNDS: z.coerce.number().default(12),
+  API_URL: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
